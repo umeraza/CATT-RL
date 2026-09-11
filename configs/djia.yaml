@@ -1,0 +1,18 @@
+defaults: base.yaml
+
+experiment:
+  name: djia_catt_rl
+  output_dir: outputs/djia
+
+data:
+  panel_path: data/processed/djia_2022_full.npz
+  train_start: 2019-01-01
+  train_end: 2021-12-31
+  validation_start: 2021-10-01
+  validation_end: 2021-12-31
+  test_start: 2022-01-01
+  test_end: 2022-12-31
+
+model:
+  cross_asset_mode: full
+

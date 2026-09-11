@@ -1,0 +1,7 @@
+group: memory
+variants:
+  - {name: memory_0, overrides: {model.memory_depth: 0}}
+  - {name: memory_4, overrides: {model.memory_depth: 4}}
+  - {name: memory_8, overrides: {model.memory_depth: 8}}
+  - {name: memory_16, overrides: {model.memory_depth: 16}}
+

@@ -1,0 +1,32 @@
+name: djia_table_2022_2024
+description: >-
+  Three-year training windows and one-year tests transcribed from the manuscript
+  dataset table. This is the canonical protocol used by the repository.
+windows:
+  - name: test_2022
+    panel_path: data/processed/djia_2022_full.npz
+    train_start: 2019-01-01
+    train_end: 2021-12-31
+    validation_start: 2021-10-01
+    validation_end: 2021-12-31
+    test_start: 2022-01-01
+    test_end: 2022-12-31
+    universe: data/universes/djia_2022.csv
+  - name: test_2023
+    panel_path: data/processed/djia_2023_full.npz
+    train_start: 2020-01-01
+    train_end: 2022-12-31
+    validation_start: 2022-10-01
+    validation_end: 2022-12-31
+    test_start: 2023-01-01
+    test_end: 2023-12-31
+    universe: data/universes/djia_2023.csv
+  - name: test_2024
+    panel_path: data/processed/djia_2024_full.npz
+    train_start: 2021-01-01
+    train_end: 2023-12-31
+    validation_start: 2023-10-01
+    validation_end: 2023-12-31
+    test_start: 2024-01-01
+    test_end: 2024-12-31
+    universe: data/universes/djia_2024.csv

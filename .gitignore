@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# IDE and OS
+.DS_Store
+.idea/
+.vscode/
+
+# Research data and generated artifacts
+data/raw/
+data/processed/
+outputs/
+checkpoints/
+wandb/
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.parquet
+*.csv.gz
+
+# Keep the small, manuscript-reported reference tables under version control.
+!results/paper_reported/*.csv
+

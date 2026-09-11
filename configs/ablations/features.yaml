@@ -1,0 +1,9 @@
+group: features
+variants:
+  - {name: prices, overrides: {data.feature_set: prices, data.include_weights: false, data.include_cash: false}}
+  - {name: momentum, overrides: {data.feature_set: momentum, data.include_weights: false, data.include_cash: false}}
+  - {name: volatility_range, overrides: {data.feature_set: volatility_range, data.include_weights: false, data.include_cash: false}}
+  - {name: full, overrides: {data.feature_set: full, data.include_weights: true, data.include_cash: true}}
+  - {name: full_without_weights, overrides: {data.feature_set: full, data.include_weights: false, data.include_cash: true}}
+  - {name: full_without_cash, overrides: {data.feature_set: full, data.include_weights: true, data.include_cash: false}}
+

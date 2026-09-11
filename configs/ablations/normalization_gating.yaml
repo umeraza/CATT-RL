@@ -1,0 +1,11 @@
+group: normalization_gating
+variants:
+  - name: pre_instance_lgu
+    overrides: {model.normalization: instance, model.normalization_placement: pre, model.use_lgu: true}
+  - name: no_lgu
+    overrides: {model.normalization: instance, model.normalization_placement: pre, model.use_lgu: false}
+  - name: pre_layer_lgu
+    overrides: {model.normalization: layer, model.normalization_placement: pre, model.use_lgu: true}
+  - name: post_instance_lgu
+    overrides: {model.normalization: instance, model.normalization_placement: post, model.use_lgu: true}
+

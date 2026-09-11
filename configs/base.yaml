@@ -1,0 +1,84 @@
+experiment:
+  name: catt_rl
+  output_dir: outputs/catt_rl
+  seed: 7
+  device: auto
+  deterministic: true
+  amp: true
+  max_updates: 500
+  evaluate_every: 1
+  early_stopping_patience: 10
+  save_attention: false
+
+data:
+  panel_path: data/processed/panel_full.npz
+  train_start: 2019-01-01
+  train_end: 2021-12-31
+  validation_start: 2021-10-01
+  validation_end: 2021-12-31
+  test_start: 2022-01-01
+  test_end: 2022-12-31
+  lookback: 64
+  feature_set: full
+  include_weights: true
+  include_cash: true
+  episode_steps: 252
+
+environment:
+  initial_value: 1000000.0
+  transaction_cost: 0.001
+  blend: 0.35
+  turnover_cap: 0.25
+  allocation_floor: 0.0001
+  reward_type: value_delta
+  reward_scale: initial_value
+  mean_variance_alpha: 0.005
+  variance_window: 20
+
+model:
+  backbone: catt
+  d_model: 128
+  layers: 3
+  heads: 4
+  pw_hidden_1: 64
+  pw_hidden_2: 32
+  dropout: 0.1
+  memory_depth: 8
+  normalization: instance
+  normalization_placement: pre
+  use_lgu: true
+  temporal_position_encoding: sinusoidal
+  cross_asset_mode: full
+  context_latents: 32
+  policy_hidden: 128
+  initial_log_std: -0.5
+  min_concentration: 0.001
+
+policy:
+  distribution: logistic_normal
+  temperature: 1.0
+
+ppo:
+  gamma: 0.995
+  gae_lambda: 0.95
+  clip_epsilon: 0.20
+  value_coefficient: 0.5
+  entropy_coefficient: 0.001
+  learning_rate: 0.0003
+  minimum_learning_rate: 0.00003
+  weight_decay: 0.0001
+  gradient_clip: 1.0
+  rollout_steps: 128
+  num_envs: 32
+  epochs: 10
+  minibatch_size: 2048
+  target_kl: null
+
+evaluation:
+  annualization: 252
+  risk_free_rate: 0.03
+  minimum_acceptable_return: 0.03
+  bootstrap_samples: 2000
+  bootstrap_block_length: 21
+  bootstrap_confidence: 0.95
+

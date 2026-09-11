@@ -1,0 +1,44 @@
+defaults: base.yaml
+
+experiment:
+  name: smoke
+  output_dir: outputs/smoke
+  seed: 7
+  device: cpu
+  amp: false
+  max_updates: 2
+  evaluate_every: 1
+  early_stopping_patience: 3
+
+data:
+  panel_path: data/processed/smoke.npz
+  train_start: 2018-01-01
+  train_end: 2018-07-31
+  validation_start: 2018-08-01
+  validation_end: 2018-09-14
+  test_start: 2018-09-17
+  test_end: 2018-11-30
+  lookback: 16
+  episode_steps: 32
+
+model:
+  d_model: 32
+  layers: 1
+  heads: 4
+  pw_hidden_1: 24
+  pw_hidden_2: 16
+  dropout: 0.0
+  memory_depth: 2
+  context_latents: 4
+  policy_hidden: 32
+
+ppo:
+  rollout_steps: 8
+  num_envs: 2
+  epochs: 1
+  minibatch_size: 8
+
+evaluation:
+  bootstrap_samples: 100
+  bootstrap_block_length: 5
+

@@ -1,0 +1,29 @@
+defaults: base.yaml
+
+experiment:
+  name: sp500_catt_rl
+  output_dir: outputs/sp500
+
+# Quadratic all-to-all attention over thousands of assets is not feasible at
+# the paper's stated batch size. Latent attention is an explicit scalable mode.
+model:
+  cross_asset_mode: latent
+  context_latents: 32
+
+# Memory-safe large-universe execution. The manuscript-wide 128×32 rollout and
+# 2048-state minibatch remain in base.yaml, but are physically incompatible with
+# 3,152 assets × 64 days × roughly 100 factors on a 40 GB accelerator.
+ppo:
+  rollout_steps: 32
+  num_envs: 2
+  minibatch_size: 4
+
+data:
+  panel_path: data/processed/sp500_2022_full_alpha158.npz
+  train_start: 2019-01-01
+  train_end: 2021-12-31
+  validation_start: 2021-10-01
+  validation_end: 2021-12-31
+  test_start: 2022-01-01
+  test_end: 2022-12-31
+  episode_steps: 128

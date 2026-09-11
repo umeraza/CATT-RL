@@ -1,0 +1,32 @@
+ticker,company,snapshot_date
+AAPL,Apple Inc.,2022-01-03
+AMGN,Amgen Inc.,2022-01-03
+AXP,American Express Company,2022-01-03
+BA,The Boeing Company,2022-01-03
+CAT,Caterpillar Inc.,2022-01-03
+CRM,Salesforce Inc.,2022-01-03
+CSCO,Cisco Systems Inc.,2022-01-03
+CVX,Chevron Corporation,2022-01-03
+DIS,The Walt Disney Company,2022-01-03
+DOW,Dow Inc.,2022-01-03
+GS,The Goldman Sachs Group Inc.,2022-01-03
+HD,The Home Depot Inc.,2022-01-03
+HON,Honeywell International Inc.,2022-01-03
+IBM,International Business Machines Corporation,2022-01-03
+INTC,Intel Corporation,2022-01-03
+JNJ,Johnson & Johnson,2022-01-03
+JPM,JPMorgan Chase & Co.,2022-01-03
+KO,The Coca-Cola Company,2022-01-03
+MCD,McDonald's Corporation,2022-01-03
+MMM,3M Company,2022-01-03
+MRK,Merck & Co. Inc.,2022-01-03
+MSFT,Microsoft Corporation,2022-01-03
+NKE,NIKE Inc.,2022-01-03
+PG,The Procter & Gamble Company,2022-01-03
+TRV,The Travelers Companies Inc.,2022-01-03
+UNH,UnitedHealth Group Incorporated,2022-01-03
+V,Visa Inc.,2022-01-03
+VZ,Verizon Communications Inc.,2022-01-03
+WBA,Walgreens Boots Alliance Inc.,2022-01-03
+WMT,Walmart Inc.,2022-01-03
+

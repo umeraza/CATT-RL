@@ -1,0 +1,5 @@
+group: backbone
+variants:
+  - {name: catt, overrides: {model.backbone: catt}}
+  - {name: vanilla_transformer, overrides: {model.backbone: vanilla}}
+

@@ -1,0 +1,6 @@
+variant,sortino,omega,mdd,turnover,source
+Pre-attn InstanceNorm + LGU,2.694,1.514,0.180,0.62,manuscript
+No LGU,2.512,1.472,0.206,0.74,manuscript
+Pre-attn LayerNorm + LGU,2.571,1.490,0.176,0.68,manuscript
+Post-attn InstanceNorm + LGU,2.538,1.481,0.204,0.70,manuscript
+

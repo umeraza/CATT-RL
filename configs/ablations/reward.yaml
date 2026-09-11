@@ -1,0 +1,6 @@
+group: reward
+variants:
+  - {name: cost_aware_value_delta, overrides: {environment.reward_type: value_delta}}
+  - {name: frictionless_log_return, overrides: {environment.reward_type: log_return}}
+  - {name: mean_variance, overrides: {environment.reward_type: mean_variance, environment.mean_variance_alpha: 0.005}}
+

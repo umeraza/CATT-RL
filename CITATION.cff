@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the CATT-RL paper and this repository."
+title: "CATT-RL: Deep Reinforcement Learning for Long-Horizon Portfolio Management with a Context-Aware Temporal Transformer"
+type: software
+version: 0.1.0
+date-released: 2026-09-11
+license: MIT
+authors:
+  - family-names: Mukhtar
+    given-names: Umar Raza
+  - family-names: Mukhtar
+    given-names: Hamza
+    email: hamza.hm.mukhtar@gmail.com
+  - family-names: Alfraihi
+    given-names: Hessa
+abstract: >-
+  Reference implementation of CATT-RL, a PPO-trained, transaction-aware
+  portfolio-allocation policy with Context-Aware Temporal Transformer blocks,
+  pre-attention instance normalization, a lightweight gating unit, and a
+  bounded memory trajectory.
