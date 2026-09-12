@@ -1,7 +1,0 @@
-model,cumret,sharpe,sortino,omega,source
-EarnMore,2.506,2.032,1.421,1.385,manuscript
-GAT-HMARL,1.750,1.340,1.080,1.220,manuscript
-CVaR-SafeRL,2.320,1.850,1.390,1.340,manuscript
-MarginTrader,2.180,1.160,0.950,1.150,manuscript
-CATT-RL,2.739,2.019,1.527,1.430,manuscript
-

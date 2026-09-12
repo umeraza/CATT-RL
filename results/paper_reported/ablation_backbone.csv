@@ -1,4 +1,0 @@
-variant,cumret,sharpe,sortino,omega,turnover,mdd,source
-Vanilla Transformer,2.128,1.456,2.356,1.418,0.85,0.23,manuscript
-CATT-RL,2.307,1.649,2.694,1.514,0.62,0.18,manuscript
-

@@ -1,5 +1,0 @@
-variant,net_cumret,sharpe,sortino,omega,turnover,source
-Cost-aware value delta,2.307,1.649,2.694,1.514,0.62,manuscript
-Log-return without training costs,2.154,1.612,2.587,1.497,0.92,manuscript
-Mean-variance,2.211,1.633,2.661,1.506,0.58,manuscript
-
