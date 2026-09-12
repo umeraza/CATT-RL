@@ -1,15 +1,8 @@
 # CATT-RL
 
-Official-style reference implementation for **“CATT-RL: Deep Reinforcement
+Implementation for **“CATT-RL: Deep Reinforcement
 Learning for Long-Horizon Portfolio Management with a Context-Aware Temporal
-Transformer.”** The repository implements the model, the transaction-aware
-portfolio environment, PPO/GAE training, rolling evaluation, all manuscript
-metrics, and every reported ablation family.
-
-> **Research-use notice.** This is a backtesting implementation, not investment
-> advice and not a live-trading system. Yahoo Finance downloads are optional and
-> governed by the data provider's terms. Exact historical index membership must
-> be supplied as point-in-time snapshots for a defensible reproduction.
+Transformer.”** 
 
 ## What is implemented
 
@@ -66,16 +59,11 @@ optional:
 python -m pip install -e '.[qlib]'
 ```
 
-## One-minute smoke run
-
 ```bash
 catt-rl synthetic --output data/processed/smoke.npz --assets 4 --days 220 --seed 7
 catt-rl train --config configs/smoke.yaml
 pytest
 ```
-
-The smoke configuration is intentionally tiny and is only a software check; it
-cannot reproduce the paper's financial results.
 
 ## Real-data workflow
 
@@ -127,39 +115,8 @@ Every training directory contains:
 - deterministic `daily_returns.csv`, `portfolio_values.csv`, `weights.csv`,
   `trades.csv`, and optional `attention.npz`.
 
-Generated outputs are deliberately separated from `results/paper_reported/`.
-The latter contains values transcribed from the manuscript so that claimed and
-newly reproduced results cannot be confused.
-
-## Important manuscript alignment notes
-
-The source manuscript contains mutually inconsistent DJIA dates (the dataset
-table says 2022–2024 tests; the prose/implementation section also states
-2023–2025), describes an “S&P500” universe of 3,152 retained securities, and
-does not specify the stochastic distribution required to evaluate PPO action
-log-probabilities. This repository does not hide those gaps:
-
-- both DJIA date protocols are supplied in `configs/protocols/`;
-- S&P500 requires a user-provided point-in-time constituent snapshot, while a
-  broad-US-universe experiment should be named as such;
-- the policy uses a documented logistic-normal distribution whose softmax mean
-  exactly produces asset-plus-cash simplex weights;
-- large-universe latent attention is explicit and configurable rather than
-  being silently substituted for quadratic full attention.
-
-See `docs/MANUSCRIPT_ALIGNMENT.md` for the complete specification ledger.
-
-## Reproducibility boundary
-
-Code can reproduce the stated procedure, but exact paper numbers additionally
-require the authors' original price snapshot, corporate-action adjustments,
-point-in-time constituent files, the exact 95-factor Alpha158 subset, and the
-actual seed list. The repository records all of these inputs when supplied and
-fails loudly on malformed panels. It never fabricates missing market data or
-copies manuscript values into generated output folders.
 
 ## Citation
 
-Update the repository URL in `CITATION.cff` after publishing, then cite the paper
-and software release. The implementation is released under the MIT License.
+The implementation is released under the MIT License.
 
